@@ -1,0 +1,119 @@
+.navbar {
+    --height-navbar: auto;
+    --py-navbar: #{spacer(2)};
+    --px-navbar: #{spacer(2.5)};
+    --size-brand: 120px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--py-navbar) var(--px-navbar);
+    background-color: transparent;
+    box-shadow: 0 0 20px transparent;
+    position: absolute;
+    z-index: 999;
+    transition: background-color var(--speed-slow) var(--cubic-bezier-2), box-shadow var(--speed-slow) var(--cubic-bezier-2), padding var(--speed-slow) var(--cubic-bezier-2);
+
+    .navbar-menu {
+        display: none;
+        background-color: transparent;
+        transition: background-color var(--speed-slow) var(--cubic-bezier-2);
+
+        a {
+            opacity: 1;
+            color: rgba(color(shark), .5);
+            transition: opacity var(--speed-slow) var(--cubic-bezier-2), height var(--speed-slow) var(--cubic-bezier-2), color var(--speed-slow) var(--cubic-bezier-2);
+
+            &.active {
+                color: color(shark);
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    color: color(shark);
+                }
+            }
+        }
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        width: var(--size-brand);
+        transition: top var(--speed-slow) var(--cubic-bezier-2);
+
+        .brand {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        --height-navbar: #{spacer(10)};
+        --py-navbar: #{spacer(6)};
+        --px-navbar: #{spacer(4)};
+        --size-brand: 180px;
+        position: fixed;
+
+        .navbar-brand {
+            position: absolute;
+            top: var(--py-navbar);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .navbar-menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &.is-up {
+            --py-navbar: #{spacer(3)};
+            --px-navbar: #{spacer(4)};
+            height: var(--height-navbar);
+            background-color: color(pearl);
+            box-shadow: 0 0 20px rgba(color(cola), .15);
+            position: fixed;
+            top: 0;
+
+            .navbar-menu {
+                width: 150px;
+                position: relative;
+
+                a {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    &:not(.active) {
+                        opacity: 0;
+                        height: 0;
+                    }
+                }
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        padding: var(--py-navbar) var(--px-navbar);
+                        background-color: color(pearl);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        a {
+                            position: relative;
+
+                            &:not(.active) {
+                                opacity: 1;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .navbar-button {
+                position: absolute;
+                top: var(--py-navbar);
+                right: var(--px-navbar);
+            }
+        }
+    }
+}

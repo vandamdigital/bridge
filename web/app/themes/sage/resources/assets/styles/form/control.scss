@@ -1,0 +1,36 @@
+.form-control {
+    width: 100%;
+    height: var(--size-input);
+    position: relative;
+
+    &::placeholder {
+        color: rgba(color(cola), .3);
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+
+    &:invalid {
+        //
+    }
+
+    &[readonly] {
+        background-color: rgba(color(cola), .4);
+    }
+
+    &[type='search'] {
+        //
+    }
+
+    &:not(textarea) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+textarea.form-control {
+    display: block;
+    min-height: 150px;
+    resize: vertical;
+}

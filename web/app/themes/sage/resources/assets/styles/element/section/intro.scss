@@ -1,0 +1,22 @@
+.section--intro {
+    margin-bottom: 0;
+    text-align: center;
+    position: relative;
+    padding: {
+        top: calc(var(--margin-section));
+        bottom: calc(var(--margin-section));
+    }
+
+    
+    .intro-text__title {
+        margin-bottom: spacer(3);
+    }
+
+    .btn {
+        margin-top: spacer(3);
+    }
+
+    ~ .section--agencies {
+        margin-top: calc(-1 * var(--border-agencies));
+    }
+}

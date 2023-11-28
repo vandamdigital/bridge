@@ -1,0 +1,131 @@
+.footer {
+    --py-footer: #{spacer(3)};
+    --size-footer-nav: #{spacer(2)};
+    --size-footer-persons: 100px;
+    background-color: rgba(color(milk), .7);
+
+    .footer-top {
+        .tns-ovh {
+            overflow: visible;
+        }
+
+        .footer-persons {
+            display: flex;
+            margin-top: calc(-1 * (var(--size-footer-persons) + var(--py-footer)));
+            padding-bottom: calc(var(--py-footer) / .75);
+            gap: spacer(2.5);
+
+            .card {
+                flex: 1;
+
+                &:nth-child(odd) {
+                    margin-bottom: var(--py-footer);
+                }
+
+                &:nth-child(even) {
+                    margin-top: var(--py-footer);
+                }
+            }
+        }
+
+        .back-to-top {
+            text-align: center;
+
+            button {
+                @media (hover: hover) and (pointer: fine) {
+                    transform: translateY(0);
+                    transition: transform var(--speed-default) var(--cubic-bezier-2);
+
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+        padding: {
+            top: var(--py-footer);
+            bottom: var(--py-footer);
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-top: 1px solid rgba(color(shark), .1);
+        position: relative;
+
+        .footer-copy {
+            font-weight: 700;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--size-footer-nav);
+
+            a {
+                color: rgba(color(shark), .5);
+
+                @media (hover: hover) and (pointer: fine) {
+                    transition: color var(--speed-default) var(--cubic-bezier-2);
+
+                    &:hover {
+                        color: color(shark);
+                    }
+                }
+            }
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            font-size: clamp-calculator(16, 21);
+            color: color(blueberry);
+            gap: spacer(3);
+
+            a {
+                @media (hover: hover) and (pointer: fine) {
+                    transition: color var(--speed-default) var(--cubic-bezier-2);
+
+                    &:hover {
+                        color: color(toxic);
+                    }
+                }
+            }
+        }
+        padding: {
+            top: var(--py-footer);
+            bottom: var(--py-footer);
+        }
+    }
+
+    &.footer--persons {
+        margin-top: calc(var(--size-footer-persons) + var(--margin-section));
+    }
+
+    @include media-breakpoint-down(sm) {
+        .footer-bottom {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: spacer(3);
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        --py-footer: #{spacer(7.5)};
+        --size-footer-nav: #{spacer(5)};
+        --size-footer-persons: 150px;
+
+        .footer-bottom {
+            .footer-nav {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

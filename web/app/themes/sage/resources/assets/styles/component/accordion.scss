@@ -1,0 +1,53 @@
+.accordion__holder {
+    position: relative;
+
+    .accordion__item {
+        border: 1px solid color(cola);
+        padding: spacer() spacer(2);
+
+        .accordion__term {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            outline: none;
+
+            i {
+                transition: transform var(--speed-default);
+            }
+
+            &.open {
+                i {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .accordion__body {
+            &.show {
+                .accordion__description {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .accordion__description {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--speed-fast) ease-out, transform var(--speed-default) var(--cubic-bezier-2);
+        }
+
+        &:first-child {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        &:not(:first-child) {
+            border-top: 0;
+        }
+    }
+}

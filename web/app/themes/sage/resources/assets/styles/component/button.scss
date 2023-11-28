@@ -1,0 +1,126 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid color(blueberry);
+    border-radius: 9999px;
+    background-color: color(blueberry);
+    font-weight: 600;
+    font-size: 16px;
+    color: color(milk);
+    cursor: pointer;
+
+    &:disabled {
+        opacity: .3;
+        pointer-events: none;
+    }
+    
+    &:not(.btn--io, .btn--social) {
+        padding: 13px 22px;
+    }
+
+    &.btn--ir {
+        i {
+            margin-left: spacer(2);
+        }
+    }
+
+    &.btn--il {
+        i {
+            margin-right: spacer(2);
+        }
+    }
+
+    &.btn--ol {
+        border-color: color(milk);
+        background-color: transparent;
+    }
+
+    &.btn--io {
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        font-size: 15px;
+    }
+
+    &.btn--transparent {
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    &.btn--social {
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: var(--border-radius);
+        background-color: rgba(color(milk), .2);
+        font-size: 28px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        transition: background-color var(--speed-default) var(--cubic-bezier-2), border-color var(--speed-default) var(--cubic-bezier-2), color var(--speed-default) var(--cubic-bezier-2);
+
+        &:hover {
+            border-color: color(milk);
+            background-color: color(milk);
+            color: color(blueberry);
+
+            &.btn--ol {
+                border-color: color(milk);
+                background-color: color(milk);
+                color: color(blueberry);
+            }
+
+            &.btn--transparent {
+                border-color: transparent;
+                background-color: transparent;
+                color: color(blueberry);
+            }
+
+            @each $name, $value in $colors {
+                &.btn--#{$name} {
+                    border-color: darken(color($name), 10);
+                    background-color: darken(color($name), 10);
+
+                    @if $name == 'milk' {
+                        border-color: color(blueberry);
+                        background-color: color(blueberry);
+                        color: color(milk);
+                    }
+
+                    &.btn--ol {
+                        border-color: color($name);
+                        background-color: color($name);
+                        color: color(milk);
+
+                        @if $name == 'blueberry' {
+                            color: color(milk);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @each $name, $value in $colors {
+        &.btn--#{$name} {
+            border-color: color($name);
+            background-color: color($name);
+
+            @if $name == 'milk' {
+                color: color(blueberry);
+            }
+        }
+    }
+}
+
+.button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer();
+    margin-top: spacer(3);
+
+    .btn {
+        margin-top: 0;
+    }
+}

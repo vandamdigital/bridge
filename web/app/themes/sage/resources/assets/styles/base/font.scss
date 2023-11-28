@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('#{$font-path}/Inter-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');

@@ -1,0 +1,63 @@
+.section--hero {
+    --mt-hero-text: #{spacer(5)};
+    --mt-hero-anchor: #{spacer(6)};
+    --pb-hero-anchor: #{spacer(5)};
+    --py-hero-reel: #{spacer(2)};
+    --animation-speed: 40s;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-top: calc(var(--margin-section) * 1.5);
+    font-family: $font-family-heading;
+    text-align: center;
+    
+    .hero-text {
+        margin-top: var(--mt-hero-text);
+        font-size: calc(var(--font-size-base) * 1.75);
+        line-height: 1.2;
+        color: rgba(color(shark), .5);
+    }
+
+    .hero-anchor {
+        display: inline-block;
+        margin-top: var(--mt-hero-anchor);
+        padding-bottom: calc(var(--pb-hero-anchor) + #{spacer(2)});
+        position: relative;
+
+        &::after {
+            width: 1px;
+            height: var(--pb-hero-anchor);
+            background-color: color(shark);
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            transform: translateY(0);
+            transition: transform var(--speed-slow) var(--cubic-bezier-2);
+
+            &:hover {
+                transform: translateY(10px);
+            }
+        }
+    }
+
+    .hero-reel__track {
+        display: flex;
+        animation: scrollText var(--animation-speed) linear infinite;
+    }
+
+    @keyframes scrollText {
+        from { transform: translateX(0%); }
+        to { transform: translateX(-200%); }
+    }
+
+    @include media-breakpoint-up(lg) {
+        --mt-hero-text: #{spacer(7.5)};
+        --mt-hero-anchor: #{spacer(12)};
+        --pb-hero-anchor: #{spacer(7)};
+        --py-hero-reel: #{spacer(4)};
+        --animation-speed: 120s;
+    }
+}

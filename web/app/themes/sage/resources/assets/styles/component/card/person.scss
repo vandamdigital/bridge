@@ -1,0 +1,74 @@
+.card.card--person {
+    --py-card-person: #{spacer(4)};
+    --px-card-person: #{spacer(3)};
+    display: flex !important;
+    padding: var(--py-card-person) var(--px-card-person);
+    background-color: color(milk);
+    gap: var(--px-card-person);
+
+    .card-figure {
+        @include responsive-ratio(150, 200, true);
+        overflow: hidden;
+        display: block;
+        width: 150px;
+        border-radius: 0 0 50% 0;
+        position: relative;
+
+        picture,
+        img {
+            @include fill-w-h(true);
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: calc(var(--py-card-person) / 2);
+    }
+
+    .card-function {
+        font-size: clamp-calculator(12, 16);
+        color: rgba(color(shark), .5);
+    }
+
+    .card-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-link {
+        color: color(blueberry);
+        word-break: break-all;
+
+        &.card-link--email {
+            text-decoration: underline;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            transition: color var(--speed-default) var(--cubic-bezier-2);
+
+            &:hover {
+                color: color(toxic);
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        text-align: center;
+
+        .card-figure {
+            @include responsive-ratio(200, 200, true);
+            width: 125px;
+            height: 125px;
+            margin: 0 auto;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        --py-card-person: #{spacer(5)};
+        --px-card-person: #{spacer(4)};
+    }
+}

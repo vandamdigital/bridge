@@ -1,0 +1,148 @@
+@use 'sass:math';
+
+body {
+    font: {
+        family: $font-family-base;
+        weight: 500;
+        size: var(--font-size-base);
+    }
+    line-height: var(--line-height-base);
+    color: color(blueberry);
+
+    b,
+    strong {
+        font-weight: 700;
+    }
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga', 'kern';
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-family-heading;
+    font-weight: 300;
+}
+
+h1,
+.h1 {
+    font-size: clamp-calculator(42, 92);
+    line-height: decimal-round(math.div(102, 92), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(42, 92))});
+
+    &.big {
+        font-size: clamp-calculator(64, 220);
+        line-height: decimal-round(math.div(192, 220), 2, floor);
+        letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(64, 220))});
+    }
+}
+
+h2,
+.h2 {
+    font-size: clamp-calculator(32, 72);
+    line-height: decimal-round(math.div(82, 72), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(32, 72))});
+}
+
+h3,
+.h3 {
+    font-size: clamp-calculator(28, 52);
+    line-height: decimal-round(math.div(62, 52), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(28, 52))});
+}
+
+h4,
+.h4 {
+    font-size: clamp-calculator(26, 42);
+    line-height: decimal-round(math.div(52, 42), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(26, 42))});
+}
+
+h5,
+.h5 {
+    font-size: clamp-calculator(20, 32);
+    line-height: decimal-round(math.div(42, 32), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(20, 32))});
+}
+
+h6,
+.h6 {
+    font-size: clamp-calculator(16, 24);
+    line-height: decimal-round(math.div(32, 24), 2, floor);
+    letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(16, 24))});
+}
+
+// Textual
+main {
+    p,
+    ul,
+    ol,
+    table {
+        &:not([class*='-none']) {
+            + *:not(.btn) {
+                margin-top: 15px;
+
+                @include media-breakpoint-up(xl) {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    .subtitle {
+        display: block;
+        margin-bottom: spacer(2);
+        font-size: 14px;
+        line-height: 24px;
+        color: color(concrete);
+    }
+}
+
+// Anchors
+p a,
+ul li a,
+ol li a,
+small a,
+td a,
+.link {
+    &:not(.btn) {
+        font-weight: 700;
+        color: color(blueberry);
+        text-decoration: underline;
+    }
+}
+
+picture,
+figure {
+    figcaption {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 0;
+            color: inherit;
+        }
+    }
+}

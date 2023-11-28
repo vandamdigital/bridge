@@ -1,0 +1,112 @@
+$app-spacer: 8px;
+
+:root {
+	// Bootstrap gutter
+	--app-gutter-x: #{$grid-gutter-width};
+	--app-gutter-x-half: calc(#{$grid-gutter-width} * .5);
+
+	// Spacer
+	--spacer: #{$app-spacer};
+
+    // Size
+    --size-custom-control-indicator: 18px;
+    --size-input: 50px;
+
+    // Width
+    --width-grid-gutter: #{$grid-gutter-width};
+
+    // Height
+    --height-btn: 40px;
+
+    // Padding
+    --padding-button: 5px 15px;
+    --padding-input: 20px;
+
+    // Margin
+    --margin-section: calc(var(--spacer) * 8);
+
+    // Font size
+    --font-size-base: 15px;
+
+    // Line height
+    --line-height-base: 25px;
+
+    // Border radius
+    --border-radius: var(--spacer);
+    --border-agencies: calc(var(--spacer) * 4);
+
+    // Transition
+    --speed-fast: .125s;
+    --speed-default: .3s;
+    --speed-slow: .5s;
+    --speed-sluggish: 1s;
+    --speed-snail: 2s;
+    --cubic-bezier: cubic-bezier(.05, .69, .14, 1);
+    --cubic-bezier-2: cubic-bezier(.215, .61, .355, 1);
+    --cubic-bezier-3: cubic-bezier(.45, .13, .33, .97);
+    --cubic-bezier-4: cubic-bezier(.34, 1.56, .64, 1);
+    --cubic-bezier-5: cubic-bezier(.19, 1, .22, 1);
+
+    @include media-breakpoint-up(sm) {
+        //
+    }
+
+    @include media-breakpoint-up(md) {
+        //
+    }
+
+    @include media-breakpoint-up(lg) {
+        // Margin
+        --margin-section: calc(var(--spacer) * 15);
+
+        // Width
+        --width-grid-gutter: 20px;
+
+        // Height
+        --height-btn: 45px;
+
+        // Font size
+        --font-size-base: 16px;
+
+        // Border radius
+        --border-agencies: calc(var(--spacer) * 12.5);
+
+        // Line height
+        --line-height-base: 26px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        // Width
+        --width-grid-gutter: 25px;
+
+        // Height
+        --height-btn: 50px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        // Margin
+        --margin-section: calc(var(--spacer) * 20);
+
+        // Size
+        --size-input: 60px;
+
+        // Width
+        --width-grid-gutter: 30px;
+
+        // Font size
+        --font-size-base: 18px;
+
+        // Line height
+        --line-height-base: 32px;
+    }
+
+    @include media-breakpoint-up(fhd) {
+        // Height
+        --height-btn: 60px;
+    }
+}
+
+// Fonts
+$font-path: '../fonts';
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-heading: 'Inter', sans-serif;
