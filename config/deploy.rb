@@ -1,4 +1,4 @@
-set :application, 'enabl'
+set :application, 'vandamdigital'
 set :repo_url, 'git@github.com:vandamdigital/bridge.git'
 
 # Encoding
