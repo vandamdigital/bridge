@@ -2,33 +2,15 @@
     --py-footer: #{spacer(3)};
     --size-footer-nav: #{spacer(2)};
     --size-footer-persons: 100px;
-    background-color: rgba(color(milk), .7);
+    background-color: color(blueberry);
 
     .footer-top {
         .tns-ovh {
             overflow: visible;
         }
 
-        .footer-persons {
-            display: flex;
-            margin-top: calc(-1 * (var(--size-footer-persons) + var(--py-footer)));
-            padding-bottom: calc(var(--py-footer) / .75);
-            gap: spacer(2.5);
-
-            .card {
-                flex: 1;
-
-                &:nth-child(odd) {
-                    margin-bottom: var(--py-footer);
-                }
-
-                &:nth-child(even) {
-                    margin-top: var(--py-footer);
-                }
-            }
-        }
-
         .back-to-top {
+            color: color(milk);
             text-align: center;
 
             button {
@@ -52,11 +34,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        border-top: 1px solid rgba(color(shark), .1);
+        border-top: 1px solid rgba(color(milk), .1);
         position: relative;
 
         .footer-copy {
             font-weight: 700;
+            color: color(milk);
         }
 
         .footer-nav {
@@ -66,13 +49,13 @@
             gap: var(--size-footer-nav);
 
             a {
-                color: rgba(color(shark), .5);
+                color: rgba(color(milk), .5);
 
                 @media (hover: hover) and (pointer: fine) {
                     transition: color var(--speed-default) var(--cubic-bezier-2);
 
                     &:hover {
-                        color: color(shark);
+                        color: color(milk);
                     }
                 }
             }

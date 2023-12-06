@@ -1,10 +1,14 @@
 .section--intro {
     margin-bottom: 0;
-    text-align: center;
+    text-align: left;
     position: relative;
     padding: {
         top: calc(var(--margin-section));
         bottom: calc(var(--margin-section));
+    }
+    
+    .intro-text {
+        margin-top: spacer(5);
     }
 
     
@@ -16,7 +20,10 @@
         margin-top: spacer(3);
     }
 
-    ~ .section--agencies {
-        margin-top: calc(-1 * var(--border-agencies));
+    @include media-breakpoint-up(lg) {
+        .intro-text {
+            margin: 0;
+            padding-left: spacer(5);
+        }
     }
 }

@@ -1,25 +1,15 @@
 @php
     $company = get_field('company_name', 'options');
     $top = get_field('back_to_top', 'options');
-    $persons = get_field('persons', 'options');
-
     $facebook = get_field('facebook', 'options');
     $instagram = get_field('instagram', 'options');
     $twitter = get_field('twitter', 'options');
     $linkedin = get_field('linkedin', 'options');
 @endphp
 
-<footer class="footer @if($persons) footer--persons @endif" data-animate="fade-to-top">
+<footer class="footer" data-animate="fade-to-top">
     <div class="container">
         <div class="footer-top">
-            @if ($persons)
-                <div class="footer-persons">
-                    @foreach ($persons as $person)
-                        @include('components.card.person', ['item' => $person])
-                    @endforeach
-                </div>
-            @endif
-
             @if ($top)
                 <div class="back-to-top">
                     <button class="h2">{!! $top !!}</button>

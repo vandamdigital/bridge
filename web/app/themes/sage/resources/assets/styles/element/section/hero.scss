@@ -12,35 +12,13 @@
     
     .hero-text {
         margin-top: var(--mt-hero-text);
-        font-size: calc(var(--font-size-base) * 1.75);
-        line-height: 1.2;
-        color: rgba(color(shark), .5);
+        font-size: calc(var(--font-size-base) * 2);
+        line-height: 1.4;
+        color: rgba(color(blueberry), .6);
     }
 
     .hero-anchor {
-        display: inline-block;
         margin-top: var(--mt-hero-anchor);
-        padding-bottom: calc(var(--pb-hero-anchor) + #{spacer(2)});
-        position: relative;
-
-        &::after {
-            width: 1px;
-            height: var(--pb-hero-anchor);
-            background-color: color(shark);
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-            transform: translateY(0);
-            transition: transform var(--speed-slow) var(--cubic-bezier-2);
-
-            &:hover {
-                transform: translateY(10px);
-            }
-        }
     }
 
     .hero-reel__track {

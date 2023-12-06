@@ -2,6 +2,7 @@
     --py-card-person: #{spacer(4)};
     --px-card-person: #{spacer(3)};
     display: flex !important;
+    width: 33%;
     padding: var(--py-card-person) var(--px-card-person);
     background-color: color(milk);
     gap: var(--px-card-person);
@@ -11,7 +12,6 @@
         overflow: hidden;
         display: block;
         width: 150px;
-        border-radius: 0 0 50% 0;
         position: relative;
 
         picture,
@@ -28,11 +28,6 @@
         gap: calc(var(--py-card-person) / 2);
     }
 
-    .card-function {
-        font-size: clamp-calculator(12, 16);
-        color: rgba(color(shark), .5);
-    }
-
     .card-links {
         display: flex;
         flex-direction: column;
@@ -43,8 +38,9 @@
         word-break: break-all;
 
         &.card-link--email {
+            font-size: 18px;
             text-decoration: underline;
-        }
+       }
 
         @media (hover: hover) and (pointer: fine) {
             transition: color var(--speed-default) var(--cubic-bezier-2);

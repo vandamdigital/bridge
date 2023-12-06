@@ -10,7 +10,6 @@ import backToTop from '../component/back-to-top';
 import initPersonSlider from '../component/person-slider';
 import initPopup from '../component/popup';
 import scrollTo from '../component/scrollTo';
-import initTextAnimation from '../component/textAnimation';
 import navbar from '../component/navbar';
 
 export default () => {
@@ -26,6 +25,6 @@ export default () => {
     initPersonSlider();
     initPopup();
     scrollTo();
-    initTextAnimation();
+
     navbar();
 };

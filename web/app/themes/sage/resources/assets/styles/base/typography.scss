@@ -51,8 +51,8 @@ h1,
     letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(42, 92))});
 
     &.big {
-        font-size: clamp-calculator(64, 220);
-        line-height: decimal-round(math.div(192, 220), 2, floor);
+        font-size: clamp-calculator(60, 180);
+        line-height: decimal-round(math.div(192, 180), 2, floor);
         letter-spacing: calc(-1 * #{calc(5 / 100 * clamp-calculator(64, 220))});
     }
 }

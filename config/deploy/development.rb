@@ -2,10 +2,10 @@ set :stage, :development
 
 # Extended Server Syntax
 # ======================
-server "development.enabl.nl", user: "enabl", port: "6811", roles: %w{web app db}
+server "bridge.developmentzone.nl", user: "enabl", port: "6811", roles: %w{web app db}
 set :deploy_to, "/home/enabl/PROJECTNAAM.dev.enabl.nl"
-set :wpcli_remote_url, 'PROJECTNAAM.dev.enabl.nl'
-set :wpcli_local_url, 'PROJECTNAAM.test'
+set :wpcli_remote_url, 'bridge.dev.enabl.nl'
+set :wpcli_local_url, 'bridge.test'
 set :wpcli_rsync_options, '-avz -e "ssh -p 6811"'
 set :tmp_dir, '/home/enabl/PROJECTNAAM.dev.enabl.nl/tmp'
 set :keep_releases, 1

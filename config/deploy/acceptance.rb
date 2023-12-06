@@ -19,7 +19,7 @@ set :branch, current_branch
 # set it globally
 set :ssh_options, {
   auth_methods: %w(publickey),
-  user: 'enabl',
+  user: 'u52612p61907',
 }
 
 fetch(:default_env).merge!(wp_env: :staging)

@@ -1,0 +1,30 @@
+.section--text-image {
+    position: relative;
+
+    .text-image {
+        text-align: center;
+    }
+
+    .footer-persons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: {
+            top: spacer(5);
+            bottom: spacer(5);
+        }
+        gap: spacer(2.5);
+        
+
+        .card {
+            flex: 1;
+
+            &:nth-child(odd) {
+                margin-bottom: spacer(3);
+            }
+
+            &:nth-child(even) {
+                margin-top: spacer(3);
+            }
+        }
+    }
+}

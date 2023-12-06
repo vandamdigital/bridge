@@ -21,7 +21,7 @@
         @endif
 
         @if ($anchor)
-            <a href="#creators" class="hero-anchor" data-animate="fade-to-top">{!! $anchor !!}</a>
+            <a href="#talenten" class="btn hero-anchor" data-animate="fade-to-top">{!! $anchor !!}</a>
         @endif
     </div>
     <div id="scroll"></div>

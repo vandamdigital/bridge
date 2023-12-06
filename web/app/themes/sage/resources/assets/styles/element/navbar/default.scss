@@ -1,13 +1,13 @@
 .navbar {
     --height-navbar: auto;
-    --py-navbar: #{spacer(2)};
-    --px-navbar: #{spacer(2.5)};
+    --navbar: #{spacer(2)};
     --size-brand: 120px;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: var(--py-navbar) var(--px-navbar);
+    padding: var(--navbar);
     background-color: transparent;
+    background-color: color(blueberry);
     box-shadow: 0 0 20px transparent;
     position: absolute;
     z-index: 999;
@@ -16,20 +16,22 @@
     .navbar-menu {
         display: none;
         background-color: transparent;
+        color: color(milk);
         transition: background-color var(--speed-slow) var(--cubic-bezier-2);
 
         a {
             opacity: 1;
-            color: rgba(color(shark), .5);
+            font-weight: bold;
+            color: rgba(color(milk), .5);
             transition: opacity var(--speed-slow) var(--cubic-bezier-2), height var(--speed-slow) var(--cubic-bezier-2), color var(--speed-slow) var(--cubic-bezier-2);
 
             &.active {
-                color: color(shark);
+                color: color(milk);
             }
 
             @media (hover: hover) and (pointer: fine) {
                 &:hover {
-                    color: color(shark);
+                    color: color(milk);
                 }
             }
         }
@@ -39,81 +41,51 @@
         display: flex;
         align-items: center;
         width: var(--size-brand);
-        transition: top var(--speed-slow) var(--cubic-bezier-2);
+        transition: top var(--speed-slow) var(--cubic-bezier-2), width var(--speed-slow) var(--cubic-bezier-2);
 
         .brand {
             width: 100%;
         }
     }
 
+    .navbar-button {
+        .btn {
+            background-color: color(sand);
+            color: color(blueberry);
+        }
+    }
+
     @include media-breakpoint-up(md) {
-        --height-navbar: #{spacer(10)};
-        --py-navbar: #{spacer(6)};
-        --px-navbar: #{spacer(4)};
-        --size-brand: 180px;
+        --height-navbar: auto;
+        --navbar: #{spacer(4)};
+        --size-brand: 190px;
         position: fixed;
 
         .navbar-brand {
+            width: var(--size-brand);
             position: absolute;
-            top: var(--py-navbar);
+            top: var(--navbar);
             left: 50%;
             transform: translateX(-50%);
         }
 
         .navbar-menu {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: spacer(2);
         }
 
         &.is-up {
-            --py-navbar: #{spacer(3)};
-            --px-navbar: #{spacer(4)};
+            --navbar: #{spacer(2)};
             height: var(--height-navbar);
-            background-color: color(pearl);
             box-shadow: 0 0 20px rgba(color(cola), .15);
             position: fixed;
             top: 0;
 
-            .navbar-menu {
-                width: 150px;
-                position: relative;
-
-                a {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-
-                    &:not(.active) {
-                        opacity: 0;
-                        height: 0;
-                    }
-                }
-
-                @media (hover: hover) and (pointer: fine) {
-                    &:hover {
-                        padding: var(--py-navbar) var(--px-navbar);
-                        background-color: color(pearl);
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-
-                        a {
-                            position: relative;
-
-                            &:not(.active) {
-                                opacity: 1;
-                                height: auto;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .navbar-button {
-                position: absolute;
-                top: var(--py-navbar);
-                right: var(--px-navbar);
-            }
+            // .navbar-brand {
+            //     width: calc(var(--size-brand) / 1.5);
+            // }
         }
     }
 }

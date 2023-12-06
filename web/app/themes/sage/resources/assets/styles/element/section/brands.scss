@@ -12,9 +12,26 @@
         height: var(--height-carrousel);
         margin: auto;
         position: relative;
-        padding: {
-            top: calc(var(--margin-section) * .75);
-            bottom: calc(var(--margin-section) * .75);
+
+        &::before,
+        &::after {
+            width: 200px;
+            height: var(--height-carrousel);
+            content: '';
+            position: absolute;
+            z-index: 2;
+        }
+
+        &::before {
+            background: linear-gradient(90deg, color(sand), transparent);
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            background: linear-gradient(-90deg, color(sand), transparent);
+            top: 0;
+            right: 0;
         }
 
         .slide-track {
@@ -49,6 +66,10 @@
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc((-1 * var(--width-carrousel-item)) * (var(--data-count) / 2))); }
+        }
+        padding: {
+            top: calc(var(--margin-section) * .75);
+            bottom: calc(var(--margin-section) * .75);
         }
     }
 
