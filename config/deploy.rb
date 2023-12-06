@@ -1,5 +1,5 @@
 set :application, 'vandamdigital'
-set :repo_url, 'git@github.com:vandamdigital/bridge.git'
+set :repo_url, 'git@github.com-vandamdigital:vandamdigital/bridge.git'
 
 # Encoding
 Encoding.default_external = 'UTF-8'

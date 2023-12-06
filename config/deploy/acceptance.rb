@@ -3,7 +3,7 @@ set :stage, :staging
 # Extended Server Syntax
 # ======================
 
-server "web0080.zxcs.nl", user: "u52612p61907", port: "", roles: %w{web app db}
+server "web0080.zxcs.nl", user: "u52612p61907", port: "7685", roles: %w{web app db}
 set :deploy_to, "/domains/developmentzone.nl/public_html/bridge"
 set :wpcli_remote_url, 'bridge.developmentzone.nl'
 set :wpcli_local_url, 'bridge.test'
